@@ -379,6 +379,37 @@ h1 span {
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
+.contest-search-label {
+  display: flex;
+  max-width: 400px;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 24px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.contest-search-input {
+  min-height: 43px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 400;
+}
+
+.contest-search-input:focus {
+  border-color: #8ebc5d;
+  outline: 3px solid rgb(142 188 93 / 15%);
+}
+
+.contest-search-empty {
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .contest-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 28px rgb(20 37 30 / 7%);
