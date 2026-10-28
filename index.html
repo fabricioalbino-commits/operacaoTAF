@@ -1,155 +1,210 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Inscreva-se para receber orientação na sua preparação para o TAF."
-    />
-    <title>Operação TAF | Inscrição</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="app.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#" aria-label="Operação TAF - início">
-        <span class="brand-mark" aria-hidden="true">OT</span>
-        <span>OPERAÇÃO <strong>TAF</strong></span>
-      </a>
-      <a class="header-link" href="#inscricao">Quero me inscrever <span aria-hidden="true">↗</span></a>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot"></span> SUA PRÓXIMA FASE COMEÇA AQUI</p>
-          <h1>Seu objetivo é passar.<br /><span>Seu plano começa agora.</span></h1>
-          <p class="hero-description">
-            Prepare-se para o Teste de Aptidão Física com orientação e um plano
-            alinhado ao seu objetivo.
-          </p>
-          <a class="button button-primary" href="#inscricao">
-            Começar minha inscrição <span aria-hidden="true">↓</span>
-          </a>
-          <div class="hero-note">
-            <span class="note-icon" aria-hidden="true">✓</span>
-            <span>Preencha seus dados para demonstrar interesse na consultoria.</span>
-          </div>
-        </div>
+    <title>Operação TAF</title>
 
-        <aside class="hero-card" aria-label="Informações sobre a consultoria">
-          <div class="card-topline"><span>PREPARAÇÃO COM PROPÓSITO</span><span>01 / 03</span></div>
-          <div class="target-icon" aria-hidden="true">
-            <span class="target-ring target-ring-outer"></span>
-            <span class="target-ring target-ring-middle"></span>
-            <span class="target-ring target-ring-inner"></span>
-            <span class="target-center"></span>
-            <span class="target-arrow">↗</span>
-          </div>
-          <p class="card-label">O FOCO É SEU PRÓXIMO PASSO</p>
-          <h2>Treino com direção.<br />Confiança no teste.</h2>
-          <div class="card-footer"><span>OPERAÇÃO TAF</span><span>● ● ●</span></div>
-        </aside>
-      </section>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-      <section class="signup-section" id="inscricao">
-        <div class="section-intro">
-          <p class="eyebrow">01 — INSCRIÇÃO</p>
-          <h2>Vamos traçar<br />seu ponto de partida.</h2>
-          <p>Conte um pouco sobre você e o teste que está buscando.</p>
-          <div class="privacy-note">
-            <span aria-hidden="true">⌑</span>
-            <span>Seus dados só devem ser enviados após a configuração do serviço de inscrição.</span>
-          </div>
-        </div>
+<body>
 
-        <form class="signup-form" id="signup-form">
-          <div class="form-heading">
-            <h3>Seus dados</h3>
-            <p>Campos com <span aria-hidden="true">*</span> são obrigatórios.</p>
-          </div>
+<header>
+    <h1>OPERAÇÃO <span>TAF</span></h1>
+    <p>Concursos públicos com Teste de Aptidão Física</p>
+</header>
 
-          <label class="field">
-            <span>Nome completo <span aria-hidden="true">*</span></span>
-            <input name="name" autocomplete="name" placeholder="Como podemos te chamar?" required />
-          </label>
+<nav>
+    <a href="#cadastro">Criar conta</a>
+    <a href="#login">Entrar</a>
+    <a href="#concursos">Concursos</a>
+    <a href="#inscricao">Inscrição</a>
+</nav>
 
-          <div class="field-row">
-            <label class="field">
-              <span>E-mail <span aria-hidden="true">*</span></span>
-              <input
-                name="email"
-                type="email"
-                autocomplete="email"
-                placeholder="voce@email.com"
-                required
-              />
-            </label>
-            <label class="field">
-              <span>WhatsApp</span>
-              <input
-                name="phone"
-                type="tel"
-                autocomplete="tel"
-                placeholder="(00) 00000-0000"
-              />
-            </label>
-          </div>
+<main>
 
-          <div class="field-row">
-            <label class="field">
-              <span>Qual TAF você vai fazer? <span aria-hidden="true">*</span></span>
-              <select name="exam" required>
-                <option value="" disabled selected>Selecione uma opção</option>
-                <option>Polícia Militar</option>
-                <option>Polícia Civil</option>
-                <option>Polícia Federal ou Rodoviária Federal</option>
-                <option>Corpo de Bombeiros</option>
-                <option>Forças Armadas</option>
-                <option>Outro concurso</option>
-                <option>Ainda estou pesquisando</option>
-              </select>
-            </label>
-            <label class="field">
-              <span>Quando será o teste?</span>
-              <input name="exam-date" type="month" />
-            </label>
-          </div>
+    <!-- CADASTRO PRÓPRIO -->
+    <section id="cadastro">
+        <h2>Criar minha conta</h2>
 
-          <label class="field">
-            <span>O que você mais precisa desenvolver?</span>
-            <textarea
-              name="goals"
-              rows="3"
-              placeholder="Ex.: corrida, barra, resistência ou ainda estou começando"
-            ></textarea>
-          </label>
+        <form id="formCadastro">
 
-          <button class="button button-submit" type="submit">
-            Enviar interesse <span aria-hidden="true">↗</span>
-          </button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-          <p class="form-disclaimer">
-            Protótipo inicial: o formulário ainda não envia nem armazena seus dados.
-          </p>
+            <label>Nome completo</label>
+            <input name="nome" required>
+
+            <label>CPF</label>
+            <input name="cpf" required maxlength="14">
+
+            <label>E-mail</label>
+            <input name="email" type="email" required>
+
+            <label>Senha</label>
+            <input name="senha" type="password"
+                   minlength="8" required>
+
+            <button type="submit">
+                CRIAR CONTA
+            </button>
+
         </form>
-      </section>
-    </main>
 
-    <footer class="site-footer">
-      <a class="brand footer-brand" href="#">
-        <span class="brand-mark" aria-hidden="true">OT</span>
-        <span>OPERAÇÃO <strong>TAF</strong></span>
-      </a>
-      <span>Preparação com propósito.</span>
-      <span>© <span id="current-year"></span> Operação TAF</span>
-    </footer>
-  </body>
+        <div id="mensagemCadastro"></div>
+    </section>
+
+    <!-- LOGIN PRÓPRIO -->
+    <section id="login">
+        <h2>Entrar no sistema</h2>
+
+        <form id="formLogin">
+
+            <label>E-mail</label>
+            <input name="email" type="email" required>
+
+            <label>Senha</label>
+            <input name="senha" type="password" required>
+
+            <button type="submit">
+                ENTRAR
+            </button>
+
+        </form>
+
+        <div id="mensagemLogin"></div>
+    </section>
+
+    <!-- CONCURSOS -->
+    <section id="concursos">
+        <h2>Concursos públicos</h2>
+
+        <article class="card">
+            <h3>Polícia Militar de Goiás</h3>
+            <p>Estado: Goiás</p>
+            <p>TAF: consultar edital</p>
+
+            <button onclick="selecionarConcurso(
+                'Polícia Militar de Goiás'
+            )">
+                Fazer inscrição
+            </button>
+        </article>
+
+        <article class="card">
+            <h3>Corpo de Bombeiros</h3>
+            <p>Estado: Goiás</p>
+            <p>TAF: consultar edital</p>
+
+            <button onclick="selecionarConcurso(
+                'Corpo de Bombeiros'
+            )">
+                Fazer inscrição
+            </button>
+        </article>
+
+        <article class="card">
+            <h3>Polícia Civil de Goiás</h3>
+            <p>Estado: Goiás</p>
+            <p>TAF: verificar edital</p>
+
+            <button onclick="selecionarConcurso(
+                'Polícia Civil de Goiás'
+            )">
+                Fazer inscrição
+            </button>
+        </article>
+
+        <article class="card">
+            <h3>Polícia Penal de Goiás</h3>
+            <p>Estado: Goiás</p>
+            <p>TAF: verificar edital</p>
+
+            <button onclick="selecionarConcurso(
+                'Polícia Penal de Goiás'
+            )">
+                Fazer inscrição
+            </button>
+        </article>
+
+        <article class="card">
+            <h3>Polícia Rodoviária Federal</h3>
+            <p>Abrangência: Nacional</p>
+            <p>TAF: verificar edital</p>
+
+            <button onclick="selecionarConcurso(
+                'Polícia Rodoviária Federal'
+            )">
+                Fazer inscrição
+            </button>
+        </article>
+
+        <article class="card">
+            <h3>Guarda Municipal</h3>
+            <p>Estado: selecionar município</p>
+            <p>TAF: verificar edital</p>
+
+            <button onclick="selecionarConcurso(
+                'Guarda Municipal'
+            )">
+                Fazer inscrição
+            </button>
+        </article>
+    </section>
+
+    <!-- INSCRIÇÃO -->
+    <section id="inscricao">
+        <h2>Inscrição no concurso</h2>
+
+        <form id="formInscricao">
+
+            <label>Concurso</label>
+            <input id="concurso" name="concurso"
+                   readonly required>
+
+            <label>Escolaridade</label>
+
+            <select name="escolaridade" required>
+                <option value="">Selecione</option>
+                <option>Ensino Médio</option>
+                <option>Ensino Superior</option>
+            </select>
+
+            <button type="submit">
+                CONFIRMAR INSCRIÇÃO
+            </button>
+
+        </form>
+
+        <div id="mensagemInscricao"></div>
+    </section>
+
+    <!-- CONSULTA -->
+    <section id="consulta">
+        <h2>Consultar inscrição</h2>
+
+        <form id="formConsulta">
+
+            <label>Protocolo</label>
+
+            <input name="protocolo" required>
+
+            <button type="submit">
+                CONSULTAR
+            </button>
+
+        </form>
+
+        <div id="resultadoConsulta"></div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Operação TAF - Sistema de inscrições</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
 </html>
