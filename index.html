@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Inscreva-se para receber orientação na sua preparação para o TAF."
+    />
+    <title>Operação TAF | Inscrição</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Operação TAF - início">
+        <span class="brand-mark" aria-hidden="true">OT</span>
+        <span>OPERAÇÃO <strong>TAF</strong></span>
+      </a>
+      <a class="header-link" href="#inscricao">Quero me inscrever <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> SUA PRÓXIMA FASE COMEÇA AQUI</p>
+          <h1>Seu objetivo é passar.<br /><span>Seu plano começa agora.</span></h1>
+          <p class="hero-description">
+            Prepare-se para o Teste de Aptidão Física com orientação e um plano
+            alinhado ao seu objetivo.
+          </p>
+          <a class="button button-primary" href="#inscricao">
+            Começar minha inscrição <span aria-hidden="true">↓</span>
+          </a>
+          <div class="hero-note">
+            <span class="note-icon" aria-hidden="true">✓</span>
+            <span>Preencha seus dados para demonstrar interesse na consultoria.</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Informações sobre a consultoria">
+          <div class="card-topline"><span>PREPARAÇÃO COM PROPÓSITO</span><span>01 / 03</span></div>
+          <div class="target-icon" aria-hidden="true">
+            <span class="target-ring target-ring-outer"></span>
+            <span class="target-ring target-ring-middle"></span>
+            <span class="target-ring target-ring-inner"></span>
+            <span class="target-center"></span>
+            <span class="target-arrow">↗</span>
+          </div>
+          <p class="card-label">O FOCO É SEU PRÓXIMO PASSO</p>
+          <h2>Treino com direção.<br />Confiança no teste.</h2>
+          <div class="card-footer"><span>OPERAÇÃO TAF</span><span>● ● ●</span></div>
+        </aside>
+      </section>
+
+      <section class="signup-section" id="inscricao">
+        <div class="section-intro">
+          <p class="eyebrow">01 — INSCRIÇÃO</p>
+          <h2>Vamos traçar<br />seu ponto de partida.</h2>
+          <p>Conte um pouco sobre você e o teste que está buscando.</p>
+          <div class="privacy-note">
+            <span aria-hidden="true">⌑</span>
+            <span>Seus dados só devem ser enviados após a configuração do serviço de inscrição.</span>
+          </div>
+        </div>
+
+        <form class="signup-form" id="signup-form">
+          <div class="form-heading">
+            <h3>Seus dados</h3>
+            <p>Campos com <span aria-hidden="true">*</span> são obrigatórios.</p>
+          </div>
+
+          <label class="field">
+            <span>Nome completo <span aria-hidden="true">*</span></span>
+            <input name="name" autocomplete="name" placeholder="Como podemos te chamar?" required />
+          </label>
+
+          <div class="field-row">
+            <label class="field">
+              <span>E-mail <span aria-hidden="true">*</span></span>
+              <input
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="voce@email.com"
+                required
+              />
+            </label>
+            <label class="field">
+              <span>WhatsApp</span>
+              <input
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                placeholder="(00) 00000-0000"
+              />
+            </label>
+          </div>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Qual TAF você vai fazer? <span aria-hidden="true">*</span></span>
+              <select name="exam" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option>Polícia Militar</option>
+                <option>Polícia Civil</option>
+                <option>Polícia Federal ou Rodoviária Federal</option>
+                <option>Corpo de Bombeiros</option>
+                <option>Forças Armadas</option>
+                <option>Outro concurso</option>
+                <option>Ainda estou pesquisando</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Quando será o teste?</span>
+              <input name="exam-date" type="month" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span>O que você mais precisa desenvolver?</span>
+            <textarea
+              name="goals"
+              rows="3"
+              placeholder="Ex.: corrida, barra, resistência ou ainda estou começando"
+            ></textarea>
+          </label>
+
+          <button class="button button-submit" type="submit">
+            Enviar interesse <span aria-hidden="true">↗</span>
+          </button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="form-disclaimer">
+            Protótipo inicial: o formulário ainda não envia nem armazena seus dados.
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#">
+        <span class="brand-mark" aria-hidden="true">OT</span>
+        <span>OPERAÇÃO <strong>TAF</strong></span>
+      </a>
+      <span>Preparação com propósito.</span>
+      <span>© <span id="current-year"></span> Operação TAF</span>
+    </footer>
+  </body>
+</html>
