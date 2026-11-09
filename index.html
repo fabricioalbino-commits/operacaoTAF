@@ -12,16 +12,20 @@
 
 <body>
 
-<header>
-    <h1>OPERAÇÃO <span>TAF</span></h1>
-    <p>Concursos públicos com Teste de Aptidão Física</p>
+<header class="topbar">
+    <div class="brand-lockup" aria-label="Operação TAF">
+        <div>
+            <h1>OPERAÇÃO <span>TAF</span></h1>
+            <p>Concursos públicos com Teste de Aptidão Física</p>
+        </div>
+    </div>
 </header>
 
 <nav>
     <a href="#cadastro">Criar conta</a>
     <a href="#login">Entrar</a>
     <a href="#concursos">Concursos</a>
-    <a href="#inscricao">Inscrição</a>
+    <a href="inscricao.html">Inscrição</a>
 </nav>
 
 <main>
@@ -32,18 +36,18 @@
 
         <form id="formCadastro">
 
-            <label>Nome completo</label>
-            <input name="nome" required>
+            <label for="cadastro-nome">Nome completo</label>
+            <input id="cadastro-nome" name="nome" autocomplete="name" required>
 
-            <label>CPF</label>
-            <input name="cpf" required maxlength="14">
+            <label for="cadastro-cpf">CPF</label>
+            <input id="cadastro-cpf" name="cpf" inputmode="numeric" autocomplete="off" required maxlength="14">
 
-            <label>E-mail</label>
-            <input name="email" type="email" required>
+            <label for="cadastro-email">E-mail</label>
+            <input id="cadastro-email" name="email" type="email" autocomplete="email" required>
 
-            <label>Senha</label>
-            <input name="senha" type="password"
-                   minlength="8" required>
+            <label for="cadastro-senha">Senha</label>
+            <input id="cadastro-senha" name="senha" type="password"
+                   minlength="8" autocomplete="new-password" required>
 
             <button type="submit">
                 CRIAR CONTA
@@ -51,7 +55,7 @@
 
         </form>
 
-        <div id="mensagemCadastro"></div>
+        <p id="mensagemCadastro" role="status" aria-live="polite"></p>
     </section>
 
     <!-- LOGIN PRÓPRIO -->
@@ -60,11 +64,11 @@
 
         <form id="formLogin">
 
-            <label>E-mail</label>
-            <input name="email" type="email" required>
+            <label for="login-email">E-mail</label>
+            <input id="login-email" name="email" type="email" autocomplete="email" required>
 
-            <label>Senha</label>
-            <input name="senha" type="password" required>
+            <label for="login-senha">Senha</label>
+            <input id="login-senha" name="senha" type="password" autocomplete="current-password" required>
 
             <button type="submit">
                 ENTRAR
@@ -72,136 +76,165 @@
 
         </form>
 
-        <div id="mensagemLogin"></div>
+        <p id="mensagemLogin" role="status" aria-live="polite"></p>
     </section>
 
     <!-- CONCURSOS -->
     <section id="concursos">
         <h2>Concursos públicos</h2>
 
-        <article class="card">
-            <h3>Polícia Militar de Goiás</h3>
-            <p>Estado: Goiás</p>
-            <p>TAF: consultar edital</p>
+        <label class="contest-search-label" for="busca-concurso">
+            Buscar concurso por nome
+            <input
+                class="contest-search-input"
+                id="busca-concurso"
+                type="search"
+                placeholder="Ex.: Polícia Militar"
+                autocomplete="off"
+            >
+        </label>
 
-            <button onclick="selecionarConcurso(
-                'Polícia Militar de Goiás'
-            )">
-                Fazer inscrição
-            </button>
-        </article>
+        <p class="contest-search-empty" id="busca-sem-resultados" role="status" hidden>
+            Nenhum concurso encontrado.
+        </p>
 
-        <article class="card">
-            <h3>Corpo de Bombeiros</h3>
-            <p>Estado: Goiás</p>
-            <p>TAF: consultar edital</p>
+        <div class="contest-grid">
+            <article class="card contest-card">
+                <div class="contest-card-header">
+                    <span class="contest-status">Consulte edital</span>
+                </div>
+                <div class="contest-card-title">
+                    <img
+                        class="contest-card-logo"
+                        src="assets/cbm-goias-logo.png"
+                        alt="Logo do Corpo de Bombeiros Militar de Goiás"
+                    >
+                    <h3>Corpo de Bombeiros Militar de Goiás (CBMGO)</h3>
+                </div>
+                <div class="contest-tags"><span>Segurança Pública</span><span>Nível conforme edital</span></div>
+                <dl class="contest-facts">
+                    <div><dt>Estado</dt><dd>Goiás</dd></div>
+                    <div><dt>Cargo</dt><dd>Conforme edital vigente</dd></div>
+                    <div><dt>Escolaridade</dt><dd>Conforme edital vigente</dd></div>
+                    <div><dt>TAF</dt><dd>Consultar requisitos oficiais</dd></div>
+                    <div><dt>Edital e taxa</dt><dd>Consulte o edital vigente</dd></div>
+                </dl>
+                <div class="contest-actions">
+                    <button class="contest-signup" type="button">Fazer inscrição</button>
+                    <a class="contest-official" href="https://www.bombeiros.go.gov.br/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
 
-            <button onclick="selecionarConcurso(
-                'Corpo de Bombeiros'
-            )">
-                Fazer inscrição
-            </button>
-        </article>
+            <article class="card contest-card">
+                <div class="contest-card-header">
+                    <span class="contest-status">Consulte edital</span>
+                </div>
+                <div class="contest-card-title">
+                    <img
+                        class="contest-card-logo"
+                        src="assets/pcgo-logo.png"
+                        alt="Brasão da Polícia Civil do Estado de Goiás"
+                    >
+                    <h3>Polícia Civil de Goiás (PCGO)</h3>
+                </div>
+                <div class="contest-tags"><span>Segurança Pública</span><span>Nível conforme edital</span></div>
+                <dl class="contest-facts">
+                    <div><dt>Estado</dt><dd>Goiás</dd></div>
+                    <div><dt>Cargo</dt><dd>Conforme edital vigente</dd></div>
+                    <div><dt>Escolaridade</dt><dd>Conforme edital vigente</dd></div>
+                    <div><dt>TAF</dt><dd>Verificar exigência para o cargo</dd></div>
+                    <div><dt>Edital e taxa</dt><dd>Consulte o edital vigente</dd></div>
+                </dl>
+                <div class="contest-actions">
+                    <button class="contest-signup" type="button">Fazer inscrição</button>
+                    <a class="contest-official" href="https://www.policiacivil.go.gov.br/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
 
-        <article class="card">
-            <h3>Polícia Civil de Goiás</h3>
-            <p>Estado: Goiás</p>
-            <p>TAF: verificar edital</p>
+            <article class="card contest-card">
+                <div class="contest-card-header">
+                    <span class="contest-status">Consulte edital</span>
+                </div>
+                <div class="contest-card-title">
+                    <img
+                        class="contest-card-logo"
+                        src="assets/policia-penal-goias.png"
+                        alt="Brasão da Polícia Penal de Goiás"
+                    >
+                    <h3>Polícia Penal de Goiás</h3>
+                </div>
+                <div class="contest-tags"><span>Segurança Pública</span><span>Nível conforme edital</span></div>
+                <dl class="contest-facts">
+                    <div><dt>Estado</dt><dd>Goiás</dd></div>
+                    <div><dt>Cargo</dt><dd>Policial penal</dd></div>
+                    <div><dt>Escolaridade</dt><dd>Conforme edital vigente</dd></div>
+                    <div><dt>TAF</dt><dd>Consultar requisitos oficiais</dd></div>
+                    <div><dt>Edital e taxa</dt><dd>Consulte os canais oficiais</dd></div>
+                </dl>
+                <div class="contest-actions">
+                    <button class="contest-signup" type="button">Fazer inscrição</button>
+                    <a class="contest-official" href="https://www.go.gov.br/" target="_blank" rel="noopener noreferrer">Portal oficial <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
 
-            <button onclick="selecionarConcurso(
-                'Polícia Civil de Goiás'
-            )">
-                Fazer inscrição
-            </button>
-        </article>
+            <article class="card contest-card">
+                <div class="contest-card-header">
+                    <span class="contest-status">Consulte edital</span>
+                </div>
+                <div class="contest-card-title">
+                    <img
+                        class="contest-card-logo"
+                        src="assets/prf-logo.png"
+                        alt="Brasão da Polícia Rodoviária Federal"
+                    >
+                    <h3>Polícia Rodoviária Federal (PRF)</h3>
+                </div>
+                <div class="contest-tags"><span>Segurança Pública</span><span>Abrangência nacional</span></div>
+                <dl class="contest-facts">
+                    <div><dt>Abrangência</dt><dd>Nacional</dd></div>
+                    <div><dt>Cargo</dt><dd>Conforme edital vigente</dd></div>
+                    <div><dt>Escolaridade</dt><dd>Conforme edital vigente</dd></div>
+                    <div><dt>TAF</dt><dd>Consultar requisitos oficiais</dd></div>
+                    <div><dt>Edital e taxa</dt><dd>Consulte o edital vigente</dd></div>
+                </dl>
+                <div class="contest-actions">
+                    <button class="contest-signup" type="button">Fazer inscrição</button>
+                    <a class="contest-official" href="https://www.gov.br/prf/pt-br" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
 
-        <article class="card">
-            <h3>Polícia Penal de Goiás</h3>
-            <p>Estado: Goiás</p>
-            <p>TAF: verificar edital</p>
-
-            <button onclick="selecionarConcurso(
-                'Polícia Penal de Goiás'
-            )">
-                Fazer inscrição
-            </button>
-        </article>
-
-        <article class="card">
-            <h3>Polícia Rodoviária Federal</h3>
-            <p>Abrangência: Nacional</p>
-            <p>TAF: verificar edital</p>
-
-            <button onclick="selecionarConcurso(
-                'Polícia Rodoviária Federal'
-            )">
-                Fazer inscrição
-            </button>
-        </article>
-
-        <article class="card">
-            <h3>Guarda Municipal</h3>
-            <p>Estado: selecionar município</p>
-            <p>TAF: verificar edital</p>
-
-            <button onclick="selecionarConcurso(
-                'Guarda Municipal'
-            )">
-                Fazer inscrição
-            </button>
-        </article>
-    </section>
-
-    <!-- INSCRIÇÃO -->
-    <section id="inscricao">
-        <h2>Inscrição no concurso</h2>
-
-        <form id="formInscricao">
-
-            <label>Concurso</label>
-            <input id="concurso" name="concurso"
-                   readonly required>
-
-            <label>Escolaridade</label>
-
-            <select name="escolaridade" required>
-                <option value="">Selecione</option>
-                <option>Ensino Médio</option>
-                <option>Ensino Superior</option>
-            </select>
-
-            <button type="submit">
-                CONFIRMAR INSCRIÇÃO
-            </button>
-
-        </form>
-
-        <div id="mensagemInscricao"></div>
-    </section>
-
-    <!-- CONSULTA -->
-    <section id="consulta">
-        <h2>Consultar inscrição</h2>
-
-        <form id="formConsulta">
-
-            <label>Protocolo</label>
-
-            <input name="protocolo" required>
-
-            <button type="submit">
-                CONSULTAR
-            </button>
-
-        </form>
-
-        <div id="resultadoConsulta"></div>
+            <article class="card contest-card">
+                <div class="contest-card-header">
+                    <span class="contest-status">Consulte edital</span>
+                </div>
+                <div class="contest-card-title">
+                    <img
+                        class="contest-card-logo"
+                        src="assets/guarda-municipal-logo.png"
+                        alt="Brasão da Guarda Municipal"
+                    >
+                    <h3>Guarda Municipal</h3>
+                </div>
+                <div class="contest-tags"><span>Segurança Pública</span><span>Concurso municipal</span></div>
+                <dl class="contest-facts">
+                    <div><dt>Local</dt><dd>Depende do município</dd></div>
+                    <div><dt>Cargo</dt><dd>Guarda municipal</dd></div>
+                    <div><dt>Escolaridade</dt><dd>Conforme edital municipal</dd></div>
+                    <div><dt>TAF</dt><dd>Consultar requisitos do município</dd></div>
+                    <div><dt>Edital e taxa</dt><dd>Consulte a prefeitura responsável</dd></div>
+                </dl>
+                <div class="contest-actions">
+                    <button class="contest-signup" type="button">Fazer inscrição</button>
+                    <a class="contest-official" href="https://www.gov.br/" target="_blank" rel="noopener noreferrer">Consultar canais oficiais <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+        </div>
     </section>
 
 </main>
 
 <footer>
-    <p>Operação TAF - Sistema de inscrições</p>
+    <p>Operação TAF - Sistema de inscrições · <span id="current-year">2026</span></p>
 </footer>
 
 <script src="app.js"></script>

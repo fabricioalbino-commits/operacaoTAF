@@ -21,13 +21,54 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: #e2e0dc;
   color: var(--ink);
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.topbar {
+  padding: 0 16px;
+  background: #dfe1dd;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  min-height: 170px;
+}
+
+.topbar h1 {
+  margin: 0;
+  color: #1c2d2a;
+  font-family: Impact, "Arial Black", "Segoe UI", sans-serif;
+  font-size: clamp(2.5rem, 8vw, 12rem);
+  font-weight: 900;
+  line-height: 0.72;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.topbar h1 span {
+  color: #1c2d2a;
+}
+
+.topbar .brand-lockup p,
+nav {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .brand-lockup {
+    min-height: 120px;
+  }
 }
 
 .site-header,
@@ -36,7 +77,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 20px max(calc((100vw - 1160px) / 2), 6vw);
+  padding: 20px max(calc((100vw - 200px) / 2), 6vw);
 }
 
 .site-header {
@@ -54,7 +95,7 @@ a {
 }
 
 .brand strong {
-  font-weight: 800;
+  font-weight: 500;
 }
 
 .brand-mark,
@@ -78,7 +119,7 @@ a {
   gap: 30px;
   color: #536159;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .site-nav a:hover,
@@ -89,7 +130,7 @@ a {
 .hero,
 .contests-section,
 .about-section {
-  width: min(1160px, 88vw);
+  width: min(600px, 88vw);
   margin: 0 auto;
 }
 
@@ -106,7 +147,7 @@ a {
   margin: 0 0 18px;
   color: #64746a;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.15em;
 }
 
@@ -121,8 +162,7 @@ a {
 }
 
 h1,
-h2,
-h3,
+
 p {
   margin-top: 0;
 }
@@ -137,7 +177,7 @@ h1,
 
 h1 {
   margin-bottom: 20px;
-  font-size: clamp(38px, 5vw, 58px);
+  font-size: clamp(3.2rem, 5vw, 6rem);
   font-weight: 700;
   line-height: 1.12;
 }
@@ -147,7 +187,7 @@ h1 span {
 }
 
 .hero-description {
-  max-width: 440px;
+  max-width: 400px;
   margin-bottom: 29px;
   color: var(--muted);
   font-size: 15px;
@@ -162,7 +202,7 @@ h1 span {
   gap: 20px;
   border-radius: 7px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 400;
   transition: transform 160ms ease, background 160ms ease;
 }
 
@@ -379,18 +419,172 @@ h1 span {
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
-.contest-search-label {
+.contest-card-header {
   display: flex;
-  max-width: 400px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.contest-card-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.contest-card-logo {
+  width: 96px;
+  height: 96px;
+  flex: 0 0 96px;
+  object-fit: contain;
+}
+
+#login {
+  width: min(100%, 1400px);
+  margin: 0 auto;
+  padding: 18px 24px 0;
+}
+
+#login h2 {
+  margin: 0 0 20px;
+  color: #1f2d2a;
+  font-size: clamp(1.7rem, 2.2vw, 2.5rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+#formLogin {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) 170px;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 22px;
+}
+
+#formLogin label {
+  display: flex;
   flex-direction: column;
   gap: 8px;
-  margin: 0 0 24px;
+  color: #1f2d2a;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#formLogin input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid #d5d2ce;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #1f2d2a;
+  font: inherit;
+  font-size: 1rem;
+}
+
+#formLogin button {
+  min-height: 36px;
+  border: 1px solid #2d2d2d;
+  border-radius: 8px;
+  background: transparent;
+  color: #1f2d2a;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+#concursos {
+  padding-top: 18px;
+}
+
+#concursos h2 {
+  margin: 0 0 22px;
+  color: #1f2d2a;
+  font-size: clamp(2.4rem, 3.5vw, 4.6rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.contest-search-label {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  color: #1f2d2a;
+  font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+  font-weight: 500;
+}
+
+.contest-search-input {
+  width: 100%;
+  min-height: 82px;
+  padding: 0 16px;
+  border: 1px solid #d4d1ca;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #1f2d2a;
+  font: inherit;
+  font-size: clamp(1.2rem, 1.7vw, 2rem);
+}
+
+.contest-search-input::placeholder {
+  color: #6b6d68;
+  opacity: 1;
+}
+
+.contest-search-input:focus {
+  border-color: #8ebc5d;
+  outline: 3px solid rgb(142 188 93 / 15%);
+}
+
+.registration-page {
+  width: min(760px, 88vw);
+  min-height: calc(100vh - 150px);
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+.registration-page h1 {
+  font-size: clamp(32px, 4vw, 46px);
+}
+
+.registration-intro {
+  max-width: 600px;
+  margin-bottom: 28px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.registration-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+}
+
+.registration-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   font-size: 12px;
   font-weight: 600;
 }
 
-.contest-search-input {
-  min-height: 43px;
+.registration-form input,
+.registration-form select {
+  width: 100%;
+  min-height: 44px;
   padding: 0 12px;
   border: 1px solid var(--line);
   border-radius: 5px;
@@ -400,9 +594,53 @@ h1 span {
   font-weight: 400;
 }
 
-.contest-search-input:focus {
+.registration-form input:focus,
+.registration-form select:focus {
   border-color: #8ebc5d;
   outline: 3px solid rgb(142 188 93 / 15%);
+}
+
+.registration-form .form-wide {
+  grid-column: 1 / -1;
+}
+
+.registration-form button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--green-dark);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.registration-form button:hover {
+  background: #28523b;
+}
+
+.registration-notice,
+.registration-message {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.registration-notice {
+  margin: 18px 0 0;
+}
+
+.registration-message {
+  margin-top: 16px;
+}
+
+.registration-back {
+  display: inline-block;
+  margin-top: 22px;
+  color: #365d2b;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .contest-search-empty {
@@ -457,6 +695,13 @@ h1 span {
   font-size: 17px;
   letter-spacing: -0.035em;
   line-height: 1.4;
+}
+
+.contest-card-title h3 {
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  text-align: center;
 }
 
 .contest-card dl {
@@ -578,6 +823,19 @@ h1 span {
 
   .site-nav {
     gap: 22px;
+  }
+
+  .registration-page {
+    padding: 46px 0;
+  }
+
+  .registration-form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .registration-form .form-wide {
+    grid-column: auto;
   }
 
   .hero {

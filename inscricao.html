@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Preencha seus dados pessoais para iniciar sua inscrição em um concurso.">
+    <title>Dados para inscrição | Operação TAF</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Operação TAF, página inicial">
+            <span class="brand-mark" aria-hidden="true">TAF</span>
+            <span>OPERAÇÃO <strong>TAF</strong></span>
+        </a>
+        <nav class="site-nav" aria-label="Navegação principal">
+            <a href="index.html#concursos">Concursos</a>
+            <a href="index.html">Página inicial</a>
+        </nav>
+    </header>
+
+    <main class="registration-page">
+        <p class="eyebrow">ETAPA DE INSCRIÇÃO</p>
+        <h1>Seus dados pessoais</h1>
+        <p class="registration-intro">
+            Preencha os dados abaixo e confira o concurso escolhido antes de continuar.
+        </p>
+
+        <form class="registration-form" id="formInscricao">
+            <label class="form-wide" for="concurso">
+                Concurso
+                <select id="concurso" name="concurso" required>
+                    <option value="">Selecione um concurso</option>
+                    <option>Polícia Militar de Goiás (PMGO)</option>
+                    <option>Corpo de Bombeiros Militar de Goiás (CBMGO)</option>
+                    <option>Polícia Civil de Goiás (PCGO)</option>
+                    <option>Polícia Penal de Goiás</option>
+                    <option>Polícia Rodoviária Federal (PRF)</option>
+                    <option>Guarda Municipal</option>
+                </select>
+            </label>
+
+            <label for="nome">
+                Nome completo
+                <input id="nome" name="nome" type="text" autocomplete="name" required>
+            </label>
+
+            <label for="cpf">
+                CPF
+                <input id="cpf" name="cpf" type="text" inputmode="numeric" autocomplete="off"
+                       maxlength="14" placeholder="000.000.000-00" required>
+            </label>
+
+            <label for="nascimento">
+                Data de nascimento
+                <input id="nascimento" name="nascimento" type="date" autocomplete="bday" required>
+            </label>
+
+            <label for="telefone">
+                Telefone
+                <input id="telefone" name="telefone" type="tel" autocomplete="tel"
+                       placeholder="(00) 00000-0000" required>
+            </label>
+
+            <label class="form-wide" for="email">
+                E-mail
+                <input id="email" name="email" type="email" autocomplete="email" required>
+            </label>
+
+            <label class="form-wide" for="escolaridade">
+                Escolaridade
+                <select id="escolaridade" name="escolaridade" required>
+                    <option value="">Selecione</option>
+                    <option>Ensino Médio</option>
+                    <option>Ensino Superior</option>
+                </select>
+            </label>
+
+            <button class="form-wide" type="submit">CONTINUAR INSCRIÇÃO</button>
+        </form>
+
+        <p class="registration-notice">
+            Seus dados não serão enviados nem salvos neste momento. O sistema ainda não está conectado
+            a um servidor seguro para receber inscrições.
+        </p>
+        <p class="registration-message" id="mensagemInscricao" role="status" aria-live="polite"></p>
+        <a class="registration-back" href="index.html#concursos">← Voltar aos concursos</a>
+    </main>
+
+    <footer class="site-footer">
+        <span>Operação TAF · <span id="current-year">2026</span></span>
+        <span>Consulte sempre os editais e canais oficiais.</span>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
